@@ -1,10 +1,11 @@
 "use strict";
 const app       = require('koa')();
 const mongoose  = require('mongoose');
+const serve     = require('koa-static');
 
 const projects  = require('./routes/projects');
 const chapters  = require('./routes/chapters');
-//require('./routes/scenes');
+const scenes    = require('./routes/scenes');
 
 mongoose.connect('mongodb://localhost/test');
 const db = mongoose.connection;
@@ -14,9 +15,12 @@ db.once('open', function() {
 });
 
 app
+    .use(serve('web'))
     .use(projects.routes())
     .use(chapters.routes())
+    .use(scenes.routes())
     .use(projects.allowedMethods())
-    .use(chapters.allowedMethods());
+    .use(chapters.allowedMethods())
+    .use(scenes.allowedMethods());
 
 app.listen(3000);
