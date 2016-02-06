@@ -1,9 +1,13 @@
-var React = require('react');
-var AltContainer = require('alt-container');
-var ProjectStore = require('../stores/ProjectStore');
-var ProjectActions = require('../actions/ProjectActions');
+const React = require('react');
+const AltContainer = require('alt-container');
+const ProjectStore = require('../stores/ProjectStore');
+const ProjectActions = require('../actions/ProjectActions');
+const Button = require('react-bootstrap').Button;
 
-var AllProjects = React.createClass({
+const AllProjects = React.createClass({
+    addProject() {
+        console.log('New project');
+    },
     render() {
         if (this.props.errorMessage) {
           return (
@@ -12,28 +16,31 @@ var AllProjects = React.createClass({
         }
 
         if (ProjectStore.isLoading()) {
-        return (
-            <div>
-            Loading...
-            </div>
-        )
+            return (
+                <div>
+                Loading...
+                </div>
+            )
         }
             
         return (
-            <ul>
-                {this.props.projects.map((project, i) => {
-                    return (
-                        <li key={i}>
-                            {project.name}
-                        </li>
-                    );
-                })}
-            </ul>
+            <div>
+                <ul>
+                    {this.props.projects.map((project, i) => {
+                        return (
+                            <li key={i}>
+                                {project.name}
+                            </li>
+                        );
+                    })}
+                </ul>
+                <Button bsStyle="default" onClick={this.addProject}>New project</Button>
+            </div>
         );
     }
 });
 
-var Projects = React.createClass({
+const Projects = React.createClass({
     componentDidMount() {
         ProjectStore.fetchProjects();
     },
