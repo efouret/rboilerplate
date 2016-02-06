@@ -4,6 +4,8 @@ const ProjectStore = require('../stores/ProjectStore');
 const ProjectActions = require('../actions/ProjectActions');
 const Button = require('react-bootstrap').Button;
 
+const Link = require('react-router').Link;
+
 const AllProjects = React.createClass({
     addProject() {
         console.log('New project');
@@ -29,7 +31,7 @@ const AllProjects = React.createClass({
                     {this.props.projects.map((project, i) => {
                         return (
                             <li key={i}>
-                                {project.name}
+                                <Link to={`/projects/${project._id}`}>{project.name}</Link>
                             </li>
                         );
                     })}
@@ -42,6 +44,7 @@ const AllProjects = React.createClass({
 
 const Projects = React.createClass({
     componentDidMount() {
+        console.log('Projects did mount');
         ProjectStore.fetchProjects();
     },
     
@@ -52,7 +55,6 @@ const Projects = React.createClass({
                 <AltContainer store={ProjectStore}>
                     <AllProjects />
                 </AltContainer>
-
             </div>
         );
     }

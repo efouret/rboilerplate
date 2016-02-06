@@ -11,6 +11,8 @@ A simple Node app using :
 * [koa-body][koa-body]
 * [mongoose][mongoose]
 * [react][react]
+* [react-router][react-router]
+* [react-bootstrap][react-bootstrap]
 * [alt][alt]
 * [axios][axios]
 
@@ -31,5 +33,7 @@ A simple Node app using :
 [koa-body]: https://github.com/dlau/koa-body
 [mongoose]: http://mongoosejs.com/
 [react]: http://facebook.github.io/react/
+[react-router]: https://github.com/rackt/react-router
+[react-bootstrap]: http://react-bootstrap.github.io/
 [alt]: http://alt.js.org/
 [axios]: https://github.com/mzabriskie/axios
