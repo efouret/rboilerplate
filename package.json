@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify -t [ babelify --presets [ es2015 react ] ] web/App.jsx > web/build/app.js"
+    "build": "browserify -t [ babelify --presets [ es2015 react ] ] web/app.jsx > web/build/app.js"
   },
   "author": "Erwan Fouret",
   "repository": {

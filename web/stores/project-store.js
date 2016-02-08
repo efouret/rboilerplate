@@ -1,6 +1,6 @@
 const alt = require('../alt');
-const ProjectActions = require('../actions/ProjectActions');
-const ProjectSource = require('../sources/ProjectSource');
+const ProjectActions = require('../actions/project-actions');
+const ProjectSource = require('../sources/project-source');
 
 class ProjectStore {
     constructor() {

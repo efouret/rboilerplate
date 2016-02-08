@@ -1,7 +1,7 @@
 const React = require('react');
 const AltContainer = require('alt-container');
-const ProjectStore = require('../stores/ProjectStore');
-const ProjectActions = require('../actions/ProjectActions');
+const ProjectStore = require('../stores/project-store');
+const ProjectActions = require('../actions/project-actions');
 const Button = require('react-bootstrap').Button;
 
 const Link = require('react-router').Link;

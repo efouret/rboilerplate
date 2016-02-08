@@ -1,4 +1,4 @@
-const ProjectActions = require('../actions/ProjectActions');
+const ProjectActions = require('../actions/project-actions');
 const axios = require('axios');
 
 const ProjectSource = {
