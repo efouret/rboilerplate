@@ -44,7 +44,6 @@ const AllProjects = React.createClass({
 
 const Projects = React.createClass({
     componentDidMount() {
-        console.log('Projects did mount');
         ProjectStore.fetchProjects();
     },
     

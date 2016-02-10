@@ -35,6 +35,6 @@
     "browserify": "13.0.0"
   },
   "engines": {
-      "node": ">=4.0"
+    "node": ">=4.0"
   }
 }

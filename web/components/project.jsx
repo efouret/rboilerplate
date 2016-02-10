@@ -1,9 +1,16 @@
 const React = require('react');
+const ProjectStore = require('../stores/project-store');
 
 const Project = React.createClass({
+   componentDidMount() {
+       ProjectStore.getProject(this.props.params.id);
+   },
+    
    render() {
        return (
-         <div>TO DO</div>  
+         <div>         
+            {this.props}
+         </div>  
        );
    } 
 });
